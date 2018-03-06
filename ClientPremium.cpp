@@ -23,11 +23,22 @@ unsigned int ClientPremium::obtenirJoursRestants() const
 double ClientPremium::obtenirTotalAPayer() const
 {
     // TODO
+	double total = 0.0;
+
+	for (unsigned int i = 0; i < panier_.size(); i++) {
+		if (panier_[i]->obtenirPrix() - 5 >= 0)
+		{
+			total += panier_[i]->obtenirPrix() - 5;
+		}
+	}
+	return total;
 }
 
 void ClientPremium::afficherProfil() const
 {
     // TODO
+	Client::afficherProfil();
+	cout << "jours restants: " << obtenirJoursRestants() << endl;
 }
 
 void ClientPremium::modifierJoursRestants(unsigned int joursRestants)

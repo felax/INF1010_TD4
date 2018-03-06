@@ -18,12 +18,12 @@ class Client : public Usager
     vector<Produit *> obtenirPanier() const;
     double obtenirTotalAPayer() const;
     void afficherPanier() const;
-    void afficherProfil() const;
+    virtual void afficherProfil() const;
 
     void modifierCodeClient(unsigned int codeClient);
     void enleverProduit(Produit *produit);
     void ajouterProduit(Produit *produit);
-    void reinitialiser();
+    virtual void reinitialiser();
   
   protected:
     vector<Produit *> panier_;

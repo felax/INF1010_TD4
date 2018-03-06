@@ -27,6 +27,13 @@ vector<Produit *> Client::obtenirPanier() const
 double Client::obtenirTotalAPayer() const
 {
     // TODO
+	double total = 0.0;
+
+	for (unsigned int i = 0; i < panier_.size(); i++) {
+		total += panier_[i]->obtenirPrix();
+	}
+	
+	return total;
 }
 
 void Client::afficherPanier() const
@@ -41,6 +48,9 @@ void Client::afficherPanier() const
 void Client::afficherProfil() const
 {
     // TODO
+	Usager::afficherProfil();
+	cout << "code client: " << obtenirCodeClient();
+	cout << "panier: " << panier_.size() << " elements" << endl;
 }
 
 void Client::modifierCodeClient(unsigned int codeClient)
@@ -72,4 +82,8 @@ void Client::ajouterProduit(Produit *produit)
 void Client::reinitialiser()
 {
     // TODO
+	for (int i = panier_.size(); i != 0; i--) {
+		delete panier_[i];
+		panier_.pop_back();
+	}
 }

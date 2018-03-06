@@ -108,8 +108,9 @@ int main()
     tests.push_back(nem.obtenirNom() == "nem crevettes" &&
                     nem.obtenirReference() == 5 &&
                     nem.obtenirFournisseur() == &samuel &&
-                    nem.obtenirPrix() == 2 &&
+                    nem.obtenirPrix() == 2.0 &&
                     nem.obtenirPourcentageRabais() == 0);
+	
 
     // une surenchère doit être strictement supérieure à l'offre précédente
     poly.encherir(&julie, &violoncelle, 5000.0);
@@ -252,5 +253,7 @@ int main()
         else
             cout << "ECHEC" << endl;
     }
+	system("pause");
     return 0;
+	
 }

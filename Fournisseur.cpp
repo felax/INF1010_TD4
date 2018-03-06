@@ -29,11 +29,18 @@ void Fournisseur::afficherCatalogue() const
 void Fournisseur::afficherProfil() const
 {
     // TODO
+	Usager::afficherProfil();
+	cout << "catalogue: " << catalogue_.size() << " elements" << endl;
 }
 
 void Fournisseur::reinitialiser()
 {
     // TODO
+	for (int i = catalogue_.size() ; i != 0; i--) {
+		catalogue_[i]->modifierFournisseur(nullptr);
+		delete catalogue_[i];
+		catalogue_.pop_back();
+	}
 }
 
 void Fournisseur::ajouterProduit(Produit *produit)

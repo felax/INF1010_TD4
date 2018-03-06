@@ -26,6 +26,7 @@ int Produit::obtenirReference() const
 double Produit::obtenirPrix() const
 {
     // TODO
+	return prix_;
 }
 
 Fournisseur *Produit::obtenirFournisseur() const
@@ -36,6 +37,9 @@ Fournisseur *Produit::obtenirFournisseur() const
 void Produit::afficher() const
 {
     // TODO
+	cout << obtenirNom() << endl;
+	cout << "reference: " << obtenirReference() << endl;
+	cout << "prix: $" << obtenirPrix() << endl;
 }
 
 void Produit::modifierNom(const string &nom)

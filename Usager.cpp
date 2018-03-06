@@ -2,42 +2,45 @@
 #include <iostream>
 
 Usager::Usager(const string &nom, const string &prenom, int identifiant,
-               const string &codePostal)
-    : nom_(nom),
-      prenom_(prenom),
-      identifiant_(identifiant),
-      codePostal_(codePostal)
+	const string &codePostal)
+	: nom_(nom),
+	prenom_(prenom),
+	identifiant_(identifiant),
+	codePostal_(codePostal)
 {
 }
 
 string Usager::obtenirNom() const
 {
-    return nom_;
+	return nom_;
 }
 
 string Usager::obtenirPrenom() const
 {
-    return prenom_;
+	return prenom_;
 }
 
 int Usager::obtenirIdentifiant() const
 {
-    return identifiant_;
+	return identifiant_;
 }
 
 string Usager::obtenirCodePostal() const
 {
-    return codePostal_;
+	return codePostal_;
 }
 
 double Usager::obtenirTotalAPayer() const
 {
-    // TODO
+	// TODO
+	return 0.0;
 }
 
 void Usager::afficherProfil() const
 {
     // TODO
+	cout << obtenirNom() << ", " << obtenirPrenom() << " (" << obtenirIdentifiant() << ")" << endl;
+	cout << "code postal: " << obtenirCodePostal() << endl;
 }
 
 void Usager::modifierNom(const string &nom)
